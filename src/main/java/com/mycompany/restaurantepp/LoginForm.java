@@ -1,4 +1,4 @@
-package com.mycompany.restaurantepp;
+/*package com.mycompany.restaurantepp;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -129,3 +129,4 @@ public class LoginForm extends JFrame {
         });
     }
 }
+*/

@@ -1,4 +1,4 @@
-package com.mycompany.restaurantepp;
+/*package com.mycompany.restaurantepp;
 
 import javax.swing.*;
 import java.awt.*;
@@ -128,12 +128,12 @@ public class MainMenu extends JFrame {
         return button;
     }
 
-    private void abrirFormularioGestionPedidos() {
+    /*private void abrirFormularioGestionPedidos() {
         PedidoForm pedidoForm = new PedidoForm(this);
         pedidoForm.setVisible(true);
         setVisible(false); // Ocultar MainMenu
-    }
-
+    }*/
+/*
     private void abrirFormularioGestionMesas() {
         // Implementar lógica para abrir el formulario de gestión de mesas
         JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de mesas");
@@ -172,3 +172,4 @@ public class MainMenu extends JFrame {
         });
     }
 }
+*/

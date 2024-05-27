@@ -16,10 +16,10 @@ public class FormularioGestionPlatos extends JFrame {
     private JButton eliminarButton;
     private JTextArea resultadoArea;
     private List<Plato> listaPlatos; // Definición de la lista de platos
-    private MainMenu mainMenu;
+    private MainMenu2 mainMenu2;
 
-    public FormularioGestionPlatos(MainMenu mainMenu) {
-        this.mainMenu = mainMenu;
+    public FormularioGestionPlatos(MainMenu2 mainMenu2) {
+        this.mainMenu2 = mainMenu2;
         setTitle("Gestión de Platos");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -126,7 +126,7 @@ public class FormularioGestionPlatos extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                mainMenu.setVisible(true);
+                mainMenu2.setVisible(true);
             }
         });
     }
@@ -198,8 +198,8 @@ public class FormularioGestionPlatos extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                MainMenu mainMenu = new MainMenu(new Usuario("admin", "admin", new Rol(1, "Administrador")));
-                FormularioGestionPlatos form = new FormularioGestionPlatos(mainMenu);
+                MainMenu2 mainMenu2 = new MainMenu2(new Usuario("admin", "admin", new Rol(1, "Administrador")));
+                FormularioGestionPlatos form = new FormularioGestionPlatos(mainMenu2);
                 form.setVisible(true);
             }
         });

@@ -26,10 +26,10 @@ public class PedidoForm extends JFrame {
     private List<Mesa> mesas;
     private List<Plato> platos;
     private Pedido pedidoActual;
-    private MainMenu mainMenu;
+    private MainMenu2 mainMenu2;
 
-    public PedidoForm(MainMenu mainMenu) {
-        this.mainMenu = mainMenu;
+    public PedidoForm(MainMenu2 mainMenu2) {
+        this.mainMenu2 = mainMenu2;
 
         setTitle("Gestión de Pedidos");
         setSize(500, 600);
@@ -142,7 +142,7 @@ public class PedidoForm extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                mainMenu.setVisible(true);
+                mainMenu2.setVisible(true);
             }
         });
     }
@@ -228,7 +228,7 @@ public class PedidoForm extends JFrame {
 
             pedidoActual = null;
             actualizarPedido();
-            //mainMenu.setVisible(true);
+            //mainMenu2.setVisible(true);
             //dispose();
         }
     }

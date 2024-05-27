@@ -1,4 +1,3 @@
-
 package com.mycompany.restaurantepp;
 
 import javax.swing.*;
@@ -12,39 +11,89 @@ public class MainMenu2 extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu2
      */
+    private Usuario usuario;
+    
     public MainMenu2(Usuario usuario) {
+        this.usuario = usuario;
         initComponents();
-        /*if (usuario.getRol().getNombre().equals("Administrador")) {
-            gestionarMesasButton = createButton("Gestionar Mesas", "iconos/mesas.png");
-            gestionarCategoriasButton = createButton("Gestionar Categorias", "iconos/categorias.png");
-            gestionarPlatosButton = createButton("Gestionar Platos", "iconos/platos.png");
-            gestionarUsuariosButton = createButton("Gestionar Usuarios", "iconos/usuarios.png");
-            gestionarInventarioButton = createButton("Gestionar Inventario", "iconos/inventario.png");
+        customizeComponents();
+    }
+    
+    private void customizeComponents() {
+        setTitle("Menú Principal");
+        setLocationRelativeTo(null);
 
-            gbc.gridwidth = 1;
-            gbc.gridx = 0;
-            gbc.gridy = 2;
-            panel.add(gestionarMesasButton, gbc);
+        welcomeLabel.setText("Bienvenido, " + usuario.getUsername());
 
-            gbc.gridx = 1;
-            gbc.gridy = 2;
-            panel.add(gestionarCategoriasButton, gbc);
-
-            gbc.gridx = 0;
-            gbc.gridy = 3;
-            panel.add(gestionarPlatosButton, gbc);
-
-            gbc.gridx = 1;
-            gbc.gridy = 3;
-            panel.add(gestionarUsuariosButton, gbc);
-
-            gbc.gridx = 0;
-            gbc.gridy = 4;
-            panel.add(gestionarInventarioButton, gbc);
+        if (!usuario.getRol().getNombre().equals("Administrador")) {
+            gestionarMesasButton.setVisible(false);
+            gestionarCategoriasButton.setVisible(false);
+            gestionarPlatosButton.setVisible(false);
+            gestionarUsuariosButton.setVisible(false);
+            gestionarInventarioButton.setVisible(false);
         }
-        */
     }
 
+    private JButton createButton(String text, String iconPath) {
+        JButton button = new JButton(text);
+        URL iconURL = getClass().getResource(iconPath);
+        if (iconURL != null) {
+            button.setIcon(new ImageIcon(iconURL));
+        }
+        button.setHorizontalAlignment(SwingConstants.LEFT);
+        button.setFont(new Font("Arial", Font.BOLD, 16));
+        button.setPreferredSize(new Dimension(250, 60));
+        button.setBackground(new Color(220, 220, 220));
+        button.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(60, 63, 65)),
+                BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+        return button;
+    }
+
+    private void abrirFormularioGestionPedidos() {
+        PedidoForm pedidoForm = new PedidoForm(this);
+        pedidoForm.setVisible(true);
+        setVisible(false); // Ocultar MainMenu2
+    }
+
+    private void abrirFormularioGestionMesas() {
+        // Implementar lógica para abrir el formulario de gestión de mesas
+        JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de mesas");
+    }
+
+    private void abrirFormularioGestionCategorias() {
+        // Implementar lógica para abrir el formulario de gestión de categorías
+        JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de categorías");
+    }
+
+    private void abrirFormularioGestionPlatos() {
+        FormularioGestionPlatos formPlatos = new FormularioGestionPlatos(this);
+        formPlatos.setVisible(true);
+        setVisible(false); // Ocultar MainMenu2
+    }
+
+    private void abrirFormularioGestionUsuarios() {
+        // Implementar lógica para abrir el formulario de gestión de usuarios
+        JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de usuarios");
+    }
+
+    private void abrirFormularioGestionInventario() {
+        // Implementar lógica para abrir el formulario de gestión de inventario
+        JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de inventario");
+    }
+
+    /*// Método principal para ejecutar la aplicación
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Rol rol = new Rol(1, "Administrador"); // Crear un rol de prueba
+                Usuario usuario = new Usuario("admin", "admin", rol); // Crear un usuario de prueba
+                MainMenu2 mainMenu2 = new MainMenu2(usuario);
+                mainMenu2.setVisible(true);
+            }
+        });
+    }
+    */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,18 +104,20 @@ public class MainMenu2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        welcomeLabel = new javax.swing.JLabel();
         gestionarPedidosButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        gestionarMesasButton = new javax.swing.JButton();
+        gestionarCategoriasButton = new javax.swing.JButton();
+        gestionarPlatosButton = new javax.swing.JButton();
+        gestionarUsuariosButton = new javax.swing.JButton();
+        gestionarInventarioButton = new javax.swing.JButton();
+        salirButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú Principal");
 
-        jLabel1.setText("jLabel1");
+        welcomeLabel.setText("welcomeLabel");
+        welcomeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         gestionarPedidosButton.setText("Gestionar Pedidos");
         gestionarPedidosButton.addActionListener(new java.awt.event.ActionListener() {
@@ -75,20 +126,37 @@ public class MainMenu2 extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        gestionarMesasButton.setText("Gestionar Mesas");
+        gestionarMesasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                gestionarMesasButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("jButton3");
+        gestionarCategoriasButton.setText("Gestionar Categorias");
+        gestionarCategoriasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gestionarCategoriasButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton4");
+        gestionarPlatosButton.setText("Gestionar Platos");
+        gestionarPlatosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gestionarPlatosButtonActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("jButton5");
+        gestionarUsuariosButton.setText("Gestionar Usuarios");
 
-        jButton6.setText("jButton6");
+        gestionarInventarioButton.setText("Gestionar Inventario");
+
+        salirButton.setText("Salir");
+        salirButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,79 +164,116 @@ public class MainMenu2 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(118, 118, 118)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(58, 58, 58)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton4)
-                                .addComponent(jButton2))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
+                        .addGap(58, 58, 58)
+                        .addComponent(gestionarMesasButton)
+                        .addGap(80, 80, 80)
+                        .addComponent(gestionarCategoriasButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(gestionarPlatosButton)
+                        .addGap(81, 81, 81)
+                        .addComponent(gestionarUsuariosButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(gestionarInventarioButton)
+                        .addGap(60, 60, 60)
+                        .addComponent(salirButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
                         .addComponent(gestionarPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton6)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                        .addGap(153, 153, 153)
+                        .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
+                .addGap(22, 22, 22)
+                .addComponent(welcomeLabel)
+                .addGap(18, 18, 18)
                 .addComponent(gestionarPedidosButton)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(gestionarMesasButton)
+                    .addComponent(gestionarCategoriasButton))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(56, 56, 56))
+                    .addComponent(gestionarPlatosButton)
+                    .addComponent(gestionarUsuariosButton))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(gestionarInventarioButton)
+                    .addComponent(salirButton))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void gestionarPedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarPedidosButtonActionPerformed
-        // TODO add your handling code here:
+        abrirFormularioGestionPedidos(); 
     }//GEN-LAST:event_gestionarPedidosButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void gestionarMesasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarMesasButtonActionPerformed
+        abrirFormularioGestionMesas();
+    }//GEN-LAST:event_gestionarMesasButtonActionPerformed
+
+    private void salirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirButtonActionPerformed
+        // Confirmar si el usuario realmente quiere salir
+        int response = JOptionPane.showConfirmDialog(this, 
+            "¿Está seguro de que desea salir?", "Confirmar salida", 
+            JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (response == JOptionPane.YES_OPTION) {
+            System.exit(0); // Salir de la aplicación
+        }
+    }//GEN-LAST:event_salirButtonActionPerformed
+
+    private void gestionarCategoriasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarCategoriasButtonActionPerformed
+        abrirFormularioGestionCategorias();
+    }//GEN-LAST:event_gestionarCategoriasButtonActionPerformed
+
+    private void gestionarPlatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarPlatosButtonActionPerformed
+        abrirFormularioGestionPlatos();
+    }//GEN-LAST:event_gestionarPlatosButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+
+    // Método principal para ejecutar la aplicación
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Rol rol = new Rol(1, "Administrador"); // Crear un rol de prueba
+                Usuario usuario = new Usuario("admin", "admin", rol); // Crear un usuario de prueba
+                MainMenu2 mainMenu2 = new MainMenu2(usuario);
+                mainMenu2.setVisible(true);
+            }
+        });
+    }
+    
+    
+    /*public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+    /*    try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -187,21 +292,22 @@ public class MainMenu2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+    /*    java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainMenu2().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton gestionarCategoriasButton;
+    private javax.swing.JButton gestionarInventarioButton;
+    private javax.swing.JButton gestionarMesasButton;
     private javax.swing.JButton gestionarPedidosButton;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton gestionarPlatosButton;
+    private javax.swing.JButton gestionarUsuariosButton;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton salirButton;
+    private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 }

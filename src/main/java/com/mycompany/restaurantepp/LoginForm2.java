@@ -111,8 +111,10 @@ public class LoginForm2 extends javax.swing.JFrame {
         });
         jPanel1.add(exitButton);
         exitButton.setBounds(310, 200, 90, 23);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("E:\\OneDrive\\Documentos\\GitHub\\ProyectoFinalPoo2024\\ProyectoFinalPoo2024\\src\\main\\java\\Img\\OIP (1).jpeg")); // NOI18N
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(0, 10, 480, 210);
+        jLabel6.setBounds(0, 20, 480, 220);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,8 +141,8 @@ public class LoginForm2 extends javax.swing.JFrame {
 
         // Si el usuario es válido, abrir el menú principal y cerrar el formulario de inicio de sesión
         if (usuario != null) {
-            MainMenu mainMenu = new MainMenu(usuario);
-            mainMenu.setVisible(true);
+            MainMenu2 mainMenu2 = new MainMenu2(usuario);
+            mainMenu2.setVisible(true);
             dispose();
         } else {
             // Si el usuario no es válido, mostrar un mensaje de error
@@ -157,14 +159,22 @@ public class LoginForm2 extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordFieldKeyPressed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-                // Limpiar los campos de texto y contraseña
-                usernameField.setText("");
-                passwordField.setText("");
+        // Limpiar los campos de texto y contraseña
+        usernameField.setText("");
+        passwordField.setText("");
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-                // Salir del sistema
-                System.exit(0);
+        // Salir del sistema
+        //System.exit(0);
+        // Confirmar si el usuario realmente quiere salir
+        int response = JOptionPane.showConfirmDialog(this,
+                "¿Está seguro de que desea salir?", "Confirmar salida",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.YES_OPTION) {
+            System.exit(0); // Salir de la aplicación
+        }
     }//GEN-LAST:event_exitButtonActionPerformed
 
     /**
