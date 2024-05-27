@@ -47,12 +47,14 @@ com\mycompany\restaurantepp\MainMenu2.class
 com\mycompany\restaurantepp\FormularioGestionUsuarios$3.class
 com\mycompany\restaurantepp\FormularioGestionMesas$1.class
 com\mycompany\restaurantepp\Mesa.class
+com\mycompany\restaurantepp\FormularioPedido.class
 com\mycompany\restaurantepp\FormularioGestionMesas$3.class
 com\mycompany\restaurantepp\LoginForm2$1.class
 com\mycompany\restaurantepp\FormularioGestionPlatos$6.class
 com\mycompany\restaurantepp\PedidoForm$7.class
 com\mycompany\restaurantepp\MainMenu2$2.class
 com\mycompany\restaurantepp\FormularioGestionCategorias$5.class
+com\mycompany\restaurantepp\FormularioPedido$1.class
 com\mycompany\restaurantepp\MainMenu2$5.class
 com\mycompany\restaurantepp\Inventario.class
 com\mycompany\restaurantepp\FormularioGestionPlatos.class
