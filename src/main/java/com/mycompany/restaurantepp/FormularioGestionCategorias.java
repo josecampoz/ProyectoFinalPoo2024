@@ -1,5 +1,6 @@
 package com.mycompany.restaurantepp;
 
+import com.mycompany.restaurantepp.Categoria;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
