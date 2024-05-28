@@ -28,7 +28,7 @@ public class MainMenu2 extends javax.swing.JFrame {
         if (!usuario.getRol().getNombre().equals("Administrador")) {
             gestionarMesasButton.setVisible(false);
             gestionarCategoriasButton.setVisible(false);
-            gestionarPlatosButton.setVisible(false);
+            btngestionarPlatosButton.setVisible(false);
             btngestionarUsuariosButton.setVisible(false);
             btngestionarInventarioButton.setVisible(false);
         }
@@ -109,7 +109,7 @@ public class MainMenu2 extends javax.swing.JFrame {
         gestionarPedidosButton = new javax.swing.JButton();
         gestionarMesasButton = new javax.swing.JButton();
         gestionarCategoriasButton = new javax.swing.JButton();
-        gestionarPlatosButton = new javax.swing.JButton();
+        btngestionarPlatosButton = new javax.swing.JButton();
         btngestionarUsuariosButton = new javax.swing.JButton();
         btngestionarInventarioButton = new javax.swing.JButton();
         salirButton = new javax.swing.JButton();
@@ -141,10 +141,10 @@ public class MainMenu2 extends javax.swing.JFrame {
             }
         });
 
-        gestionarPlatosButton.setText("Gestionar Platos");
-        gestionarPlatosButton.addActionListener(new java.awt.event.ActionListener() {
+        btngestionarPlatosButton.setText("Gestionar Platos");
+        btngestionarPlatosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gestionarPlatosButtonActionPerformed(evt);
+                btngestionarPlatosButtonActionPerformed(evt);
             }
         });
 
@@ -182,7 +182,7 @@ public class MainMenu2 extends javax.swing.JFrame {
                         .addComponent(gestionarCategoriasButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(gestionarPlatosButton)
+                        .addComponent(btngestionarPlatosButton)
                         .addGap(81, 81, 81)
                         .addComponent(btngestionarUsuariosButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -211,7 +211,7 @@ public class MainMenu2 extends javax.swing.JFrame {
                     .addComponent(gestionarCategoriasButton))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gestionarPlatosButton)
+                    .addComponent(btngestionarPlatosButton)
                     .addComponent(btngestionarUsuariosButton))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,16 +254,21 @@ public class MainMenu2 extends javax.swing.JFrame {
     }//GEN-LAST:event_salirButtonActionPerformed
 
     private void gestionarCategoriasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarCategoriasButtonActionPerformed
-        abrirFormularioGestionCategorias();
+        //abrirFormularioGestionCategorias();
+        jfrmGestionDeCategorias objGestionCategorias = new jfrmGestionDeCategorias();
+        objGestionCategorias.setVisible(true);
     }//GEN-LAST:event_gestionarCategoriasButtonActionPerformed
 
-    private void gestionarPlatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarPlatosButtonActionPerformed
-        abrirFormularioGestionPlatos();
-    }//GEN-LAST:event_gestionarPlatosButtonActionPerformed
+    private void btngestionarPlatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarPlatosButtonActionPerformed
+        //abrirFormularioGestionPlatos();
+        jfrmGestionDePlatos objGestionPlatos = new jfrmGestionDePlatos();
+        objGestionPlatos.setVisible(true);
+        
+    }//GEN-LAST:event_btngestionarPlatosButtonActionPerformed
 
     private void btngestionarUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarUsuariosButtonActionPerformed
         // TODO add your handling code here:
-        
+    
         jfrmGestionDeUsuarios objGestionUsuarios = new jfrmGestionDeUsuarios();
         objGestionUsuarios.setVisible(true);
     }//GEN-LAST:event_btngestionarUsuariosButtonActionPerformed
@@ -325,11 +330,11 @@ public class MainMenu2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btngestionarInventarioButton;
+    private javax.swing.JButton btngestionarPlatosButton;
     private javax.swing.JButton btngestionarUsuariosButton;
     private javax.swing.JButton gestionarCategoriasButton;
     private javax.swing.JButton gestionarMesasButton;
     private javax.swing.JButton gestionarPedidosButton;
-    private javax.swing.JButton gestionarPlatosButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salirButton;
     private javax.swing.JLabel welcomeLabel;
