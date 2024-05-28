@@ -111,7 +111,7 @@ public class FormularioGestionMesas extends JFrame {
         });
     }
 
-    private void crearMesa() {
+    public void crearMesa() {
         int numero = Integer.parseInt(numeroField.getText());
         int capacidad = Integer.parseInt(capacidadField.getText());
         Mesa mesa = new Mesa(numero, capacidad);
