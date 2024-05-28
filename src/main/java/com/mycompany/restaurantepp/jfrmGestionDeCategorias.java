@@ -4,6 +4,8 @@
  */
 package com.mycompany.restaurantepp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -37,6 +39,7 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        textInfoGestion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,14 +49,25 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
 
         jLabel3.setText("Nombre de categoría:");
 
+        txtIdCategoria.setBackground(new java.awt.Color(153, 153, 153));
+        txtIdCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdCategoriaActionPerformed(evt);
+            }
+        });
+
         txtNameCategoria.setBackground(new java.awt.Color(153, 153, 153));
 
+        btnCrear.setBackground(new java.awt.Color(0, 255, 0));
         btnCrear.setText("Crear");
 
+        btnConsultar.setBackground(new java.awt.Color(102, 153, 255));
         btnConsultar.setText("Consultar");
 
+        btnModificar.setBackground(new java.awt.Color(255, 255, 0));
         btnModificar.setText("Modificar");
 
+        btnEliminar.setBackground(new java.awt.Color(255, 0, 0));
         btnEliminar.setText("Eliminar");
 
         btnAtras.setBackground(new java.awt.Color(102, 255, 102));
@@ -63,6 +77,9 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
+
+        textInfoGestion.setEditable(false);
+        textInfoGestion.setBackground(new java.awt.Color(255, 255, 102));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,14 +102,17 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
                             .addComponent(txtNameCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                            .addComponent(textInfoGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +140,9 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConsultar)
                     .addComponent(btnEliminar))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(textInfoGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,6 +164,10 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
         this.dispose();
         new MainMenu2().setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void txtIdCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,7 +214,48 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField textInfoGestion;
     private javax.swing.JTextField txtIdCategoria;
     private javax.swing.JTextField txtNameCategoria;
     // End of variables declaration//GEN-END:variables
+
+    //Metodos
+    private void CrearCategoria(){
+        
+        int id =Integer.parseInt(txtIdCategoria.getText());
+        String name = txtNameCategoria.getText();
+        Categoria categoria = new Categoria(id, name);
+        textInfoGestion.setText("Categoria Creada: "+categoria.toString());
+        JOptionPane.showMessageDialog(null, "Categoria Creada: "+categoria.toString(), categoria.toString() , JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    private void ModificarCategoria(){
+        
+        int id =Integer.parseInt(txtIdCategoria.getText());
+        String name = txtNameCategoria.getText();
+        Categoria categoria = new Categoria(id, name);
+        textInfoGestion.setText("Categoria Modificada: "+categoria.toString());
+        JOptionPane.showMessageDialog(null, "Categoria Modificada: "+categoria.toString(), categoria.toString() , JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
+    private void ConsultarCategoria(){
+        
+        int id =Integer.parseInt(txtIdCategoria.getText());
+   
+        Categoria categoria = new Categoria(id, "");
+        textInfoGestion.setText("Categoria Consultada: "+categoria.toString());
+        JOptionPane.showMessageDialog(null, "Categoria Consultada: "+categoria.toString(), categoria.toString() , JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
+    private void EliminarCategoria(){
+        
+        int id =Integer.parseInt(txtIdCategoria.getText());
+     
+        textInfoGestion.setText("Categoria Eliminada: "+id);
+        JOptionPane.showMessageDialog(null, id, "Categoria Eliminada: "+id , JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+
 }

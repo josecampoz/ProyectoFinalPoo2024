@@ -83,6 +83,7 @@ public class jfrmGestionDeMesas extends javax.swing.JFrame {
             }
         });
 
+        textInfoGestion.setEditable(false);
         textInfoGestion.setBackground(new java.awt.Color(255, 255, 102));
         textInfoGestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
