@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.restaurantepp;
 
-/**
- *
- * @author User
- */
+
 public class jfrmGestiondePedidos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form jfrmGestiondePedidos
-     */
+
     public jfrmGestiondePedidos() {
         initComponents();
     }
@@ -49,6 +41,11 @@ public class jfrmGestiondePedidos extends javax.swing.JFrame {
         jLabel1.setText("Mesa:");
 
         listMesas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        listMesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listMesasActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Plato:");
 
@@ -212,6 +209,10 @@ public class jfrmGestiondePedidos extends javax.swing.JFrame {
         this.dispose();
         new MainMenu2().setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void listMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listMesasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listMesasActionPerformed
 
     /**
      * @param args the command line arguments
