@@ -117,6 +117,9 @@ public class MainMenu2 extends javax.swing.JFrame {
         btngestionarUsuariosButton = new javax.swing.JButton();
         btngestionarInventarioButton = new javax.swing.JButton();
         salirButton = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú Principal");
@@ -223,6 +226,14 @@ public class MainMenu2 extends javax.swing.JFrame {
                     .addComponent(salirButton))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -343,6 +354,9 @@ public class MainMenu2 extends javax.swing.JFrame {
     private javax.swing.JButton btngestionarPedidosButton;
     private javax.swing.JButton btngestionarPlatosButton;
     private javax.swing.JButton btngestionarUsuariosButton;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salirButton;
     private javax.swing.JLabel welcomeLabel;

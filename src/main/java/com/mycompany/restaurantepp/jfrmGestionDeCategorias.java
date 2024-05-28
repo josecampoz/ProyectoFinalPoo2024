@@ -60,15 +60,35 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
 
         btnCrear.setBackground(new java.awt.Color(0, 255, 0));
         btnCrear.setText("Crear");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearActionPerformed(evt);
+            }
+        });
 
         btnConsultar.setBackground(new java.awt.Color(102, 153, 255));
         btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         btnModificar.setBackground(new java.awt.Color(255, 255, 0));
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setBackground(new java.awt.Color(255, 0, 0));
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnAtras.setBackground(new java.awt.Color(102, 255, 102));
         btnAtras.setText("Atrás");
@@ -168,6 +188,26 @@ public class jfrmGestionDeCategorias extends javax.swing.JFrame {
     private void txtIdCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdCategoriaActionPerformed
+
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        // TODO add your handling code here:
+        CrearCategoria();
+    }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+        ModificarCategoria();
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+        ConsultarCategoria();
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        EliminarCategoria();
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
