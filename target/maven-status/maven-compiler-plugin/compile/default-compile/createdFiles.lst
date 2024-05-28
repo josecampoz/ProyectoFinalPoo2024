@@ -3,6 +3,7 @@ com\mycompany\restaurantepp\FormularioGestionCategorias.class
 com\mycompany\restaurantepp\FormularioGestionMesas$2.class
 com\mycompany\restaurantepp\LoginForm2.class
 com\mycompany\restaurantepp\FormularioGestionPlatos$4.class
+com\mycompany\restaurantepp\jfrmGestiondePedidos.class
 com\mycompany\restaurantepp\Categoria.class
 com\mycompany\restaurantepp\FormularioGestionCategorias$2.class
 com\mycompany\restaurantepp\FormularioGestionInventario$3.class
@@ -32,12 +33,14 @@ com\mycompany\restaurantepp\Rol.class
 com\mycompany\restaurantepp\FormularioGestionInventario.class
 com\mycompany\restaurantepp\jfrmGestionDePlatos$1.class
 com\mycompany\restaurantepp\FormularioGestionCategorias$3.class
+com\mycompany\restaurantepp\jfrmGestiondePedidos$3.class
 com\mycompany\restaurantepp\FormularioGestionMesas$5.class
 com\mycompany\restaurantepp\FormularioGestionInventario$1.class
 com\mycompany\restaurantepp\jfrmGestionDePlatos$3.class
 com\mycompany\restaurantepp\FormularioGestionMesas$4.class
 com\mycompany\restaurantepp\FormularioGestionPlatos$2.class
 com\mycompany\restaurantepp\MainMenu2$3.class
+com\mycompany\restaurantepp\jfrmGestiondePedidos$2.class
 com\mycompany\restaurantepp\Usuario.class
 com\mycompany\restaurantepp\FormularioGestionCategorias$4.class
 com\mycompany\restaurantepp\PedidoForm$4.class
@@ -56,6 +59,7 @@ com\mycompany\restaurantepp\Mesa.class
 com\mycompany\restaurantepp\FormularioPedido.class
 com\mycompany\restaurantepp\FormularioGestionMesas$3.class
 com\mycompany\restaurantepp\LoginForm2$1.class
+com\mycompany\restaurantepp\jfrmGestiondePedidos$1.class
 com\mycompany\restaurantepp\FormularioGestionPlatos$6.class
 com\mycompany\restaurantepp\PedidoForm$7.class
 com\mycompany\restaurantepp\MainMenu2$2.class
