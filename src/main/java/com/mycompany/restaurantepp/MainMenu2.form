@@ -43,9 +43,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="58" pref="58" max="-2" attributes="0"/>
-                          <Component id="gestionarMesasButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="btngestionarMesasButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                          <Component id="gestionarCategoriasButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="btngestionarCategoriasButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="58" pref="58" max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                          <Component id="gestionarPedidosButton" min="-2" pref="147" max="-2" attributes="0"/>
+                          <Component id="btngestionarPedidosButton" min="-2" pref="147" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
@@ -78,11 +78,11 @@
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="welcomeLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="gestionarPedidosButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="btngestionarPedidosButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="gestionarMesasButton" min="-2" max="-2" attributes="0"/>
-                      <Component id="gestionarCategoriasButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="btngestionarMesasButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="btngestionarCategoriasButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -106,28 +106,28 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="gestionarPedidosButton">
+        <Component class="javax.swing.JButton" name="btngestionarPedidosButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gestionar Pedidos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionarPedidosButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngestionarPedidosButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="gestionarMesasButton">
+        <Component class="javax.swing.JButton" name="btngestionarMesasButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gestionar Mesas"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionarMesasButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngestionarMesasButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="gestionarCategoriasButton">
+        <Component class="javax.swing.JButton" name="btngestionarCategoriasButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gestionar Categorias"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionarCategoriasButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngestionarCategoriasButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btngestionarPlatosButton">

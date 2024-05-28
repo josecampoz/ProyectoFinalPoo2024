@@ -26,8 +26,8 @@ public class MainMenu2 extends javax.swing.JFrame {
         welcomeLabel.setText("Bienvenido, " + usuario.getUsername());
 
         if (!usuario.getRol().getNombre().equals("Administrador")) {
-            gestionarMesasButton.setVisible(false);
-            gestionarCategoriasButton.setVisible(false);
+            btngestionarMesasButton.setVisible(false);
+            btngestionarCategoriasButton.setVisible(false);
             btngestionarPlatosButton.setVisible(false);
             btngestionarUsuariosButton.setVisible(false);
             btngestionarInventarioButton.setVisible(false);
@@ -106,9 +106,9 @@ public class MainMenu2 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         welcomeLabel = new javax.swing.JLabel();
-        gestionarPedidosButton = new javax.swing.JButton();
-        gestionarMesasButton = new javax.swing.JButton();
-        gestionarCategoriasButton = new javax.swing.JButton();
+        btngestionarPedidosButton = new javax.swing.JButton();
+        btngestionarMesasButton = new javax.swing.JButton();
+        btngestionarCategoriasButton = new javax.swing.JButton();
         btngestionarPlatosButton = new javax.swing.JButton();
         btngestionarUsuariosButton = new javax.swing.JButton();
         btngestionarInventarioButton = new javax.swing.JButton();
@@ -120,24 +120,24 @@ public class MainMenu2 extends javax.swing.JFrame {
         welcomeLabel.setText("welcomeLabel");
         welcomeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        gestionarPedidosButton.setText("Gestionar Pedidos");
-        gestionarPedidosButton.addActionListener(new java.awt.event.ActionListener() {
+        btngestionarPedidosButton.setText("Gestionar Pedidos");
+        btngestionarPedidosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gestionarPedidosButtonActionPerformed(evt);
+                btngestionarPedidosButtonActionPerformed(evt);
             }
         });
 
-        gestionarMesasButton.setText("Gestionar Mesas");
-        gestionarMesasButton.addActionListener(new java.awt.event.ActionListener() {
+        btngestionarMesasButton.setText("Gestionar Mesas");
+        btngestionarMesasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gestionarMesasButtonActionPerformed(evt);
+                btngestionarMesasButtonActionPerformed(evt);
             }
         });
 
-        gestionarCategoriasButton.setText("Gestionar Categorias");
-        gestionarCategoriasButton.addActionListener(new java.awt.event.ActionListener() {
+        btngestionarCategoriasButton.setText("Gestionar Categorias");
+        btngestionarCategoriasButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gestionarCategoriasButtonActionPerformed(evt);
+                btngestionarCategoriasButtonActionPerformed(evt);
             }
         });
 
@@ -177,9 +177,9 @@ public class MainMenu2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(gestionarMesasButton)
+                        .addComponent(btngestionarMesasButton)
                         .addGap(80, 80, 80)
-                        .addComponent(gestionarCategoriasButton))
+                        .addComponent(btngestionarCategoriasButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(btngestionarPlatosButton)
@@ -192,7 +192,7 @@ public class MainMenu2 extends javax.swing.JFrame {
                         .addComponent(salirButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(172, 172, 172)
-                        .addComponent(gestionarPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btngestionarPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -204,11 +204,11 @@ public class MainMenu2 extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(welcomeLabel)
                 .addGap(18, 18, 18)
-                .addComponent(gestionarPedidosButton)
+                .addComponent(btngestionarPedidosButton)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gestionarMesasButton)
-                    .addComponent(gestionarCategoriasButton))
+                    .addComponent(btngestionarMesasButton)
+                    .addComponent(btngestionarCategoriasButton))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btngestionarPlatosButton)
@@ -234,13 +234,17 @@ public class MainMenu2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void gestionarPedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarPedidosButtonActionPerformed
-        abrirFormularioGestionPedidos(); 
-    }//GEN-LAST:event_gestionarPedidosButtonActionPerformed
+    private void btngestionarPedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarPedidosButtonActionPerformed
+        //abrirFormularioGestionPedidos(); 
+        jfrmGestiondePedidos objGestionPedidos = new jfrmGestiondePedidos();
+        objGestionPedidos.setVisible(true);
+    }//GEN-LAST:event_btngestionarPedidosButtonActionPerformed
 
-    private void gestionarMesasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarMesasButtonActionPerformed
-        abrirFormularioGestionMesas();
-    }//GEN-LAST:event_gestionarMesasButtonActionPerformed
+    private void btngestionarMesasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarMesasButtonActionPerformed
+        //abrirFormularioGestionMesas();
+        jfrmGestionDeMesas objGestionMesas = new jfrmGestionDeMesas();
+        objGestionMesas.setVisible(true);
+    }//GEN-LAST:event_btngestionarMesasButtonActionPerformed
 
     private void salirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirButtonActionPerformed
         // Confirmar si el usuario realmente quiere salir
@@ -253,11 +257,11 @@ public class MainMenu2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_salirButtonActionPerformed
 
-    private void gestionarCategoriasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarCategoriasButtonActionPerformed
+    private void btngestionarCategoriasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarCategoriasButtonActionPerformed
         //abrirFormularioGestionCategorias();
         jfrmGestionDeCategorias objGestionCategorias = new jfrmGestionDeCategorias();
         objGestionCategorias.setVisible(true);
-    }//GEN-LAST:event_gestionarCategoriasButtonActionPerformed
+    }//GEN-LAST:event_btngestionarCategoriasButtonActionPerformed
 
     private void btngestionarPlatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarPlatosButtonActionPerformed
         //abrirFormularioGestionPlatos();
@@ -329,12 +333,12 @@ public class MainMenu2 extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btngestionarCategoriasButton;
     private javax.swing.JButton btngestionarInventarioButton;
+    private javax.swing.JButton btngestionarMesasButton;
+    private javax.swing.JButton btngestionarPedidosButton;
     private javax.swing.JButton btngestionarPlatosButton;
     private javax.swing.JButton btngestionarUsuariosButton;
-    private javax.swing.JButton gestionarCategoriasButton;
-    private javax.swing.JButton gestionarMesasButton;
-    private javax.swing.JButton gestionarPedidosButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salirButton;
     private javax.swing.JLabel welcomeLabel;
