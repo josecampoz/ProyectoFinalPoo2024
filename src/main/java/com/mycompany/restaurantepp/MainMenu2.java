@@ -270,6 +270,8 @@ public class MainMenu2 extends javax.swing.JFrame {
 
     private void btngestionarInventarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarInventarioButtonActionPerformed
         // TODO add your handling code here:
+        jfrmGestionInventario objGestionInventario = new jfrmGestionInventario();
+        objGestionInventario.setVisible(true);
     }//GEN-LAST:event_btngestionarInventarioButtonActionPerformed
 
     /**
