@@ -29,8 +29,8 @@ public class MainMenu2 extends javax.swing.JFrame {
             gestionarMesasButton.setVisible(false);
             gestionarCategoriasButton.setVisible(false);
             gestionarPlatosButton.setVisible(false);
-            gestionarUsuariosButton.setVisible(false);
-            gestionarInventarioButton.setVisible(false);
+            btngestionarUsuariosButton.setVisible(false);
+            btngestionarInventarioButton.setVisible(false);
         }
     }
 
@@ -74,7 +74,8 @@ public class MainMenu2 extends javax.swing.JFrame {
 
     private void abrirFormularioGestionUsuarios() {
         // Implementar lógica para abrir el formulario de gestión de usuarios
-        JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de usuarios");
+        
+        //JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de usuarios");
     }
 
     private void abrirFormularioGestionInventario() {
@@ -109,8 +110,8 @@ public class MainMenu2 extends javax.swing.JFrame {
         gestionarMesasButton = new javax.swing.JButton();
         gestionarCategoriasButton = new javax.swing.JButton();
         gestionarPlatosButton = new javax.swing.JButton();
-        gestionarUsuariosButton = new javax.swing.JButton();
-        gestionarInventarioButton = new javax.swing.JButton();
+        btngestionarUsuariosButton = new javax.swing.JButton();
+        btngestionarInventarioButton = new javax.swing.JButton();
         salirButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -147,9 +148,19 @@ public class MainMenu2 extends javax.swing.JFrame {
             }
         });
 
-        gestionarUsuariosButton.setText("Gestionar Usuarios");
+        btngestionarUsuariosButton.setText("Gestionar Usuarios");
+        btngestionarUsuariosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngestionarUsuariosButtonActionPerformed(evt);
+            }
+        });
 
-        gestionarInventarioButton.setText("Gestionar Inventario");
+        btngestionarInventarioButton.setText("Gestionar Inventario");
+        btngestionarInventarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngestionarInventarioButtonActionPerformed(evt);
+            }
+        });
 
         salirButton.setText("Salir");
         salirButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,10 +184,10 @@ public class MainMenu2 extends javax.swing.JFrame {
                         .addGap(58, 58, 58)
                         .addComponent(gestionarPlatosButton)
                         .addGap(81, 81, 81)
-                        .addComponent(gestionarUsuariosButton))
+                        .addComponent(btngestionarUsuariosButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(gestionarInventarioButton)
+                        .addComponent(btngestionarInventarioButton)
                         .addGap(60, 60, 60)
                         .addComponent(salirButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -201,10 +212,10 @@ public class MainMenu2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gestionarPlatosButton)
-                    .addComponent(gestionarUsuariosButton))
+                    .addComponent(btngestionarUsuariosButton))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gestionarInventarioButton)
+                    .addComponent(btngestionarInventarioButton)
                     .addComponent(salirButton))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
@@ -249,6 +260,17 @@ public class MainMenu2 extends javax.swing.JFrame {
     private void gestionarPlatosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarPlatosButtonActionPerformed
         abrirFormularioGestionPlatos();
     }//GEN-LAST:event_gestionarPlatosButtonActionPerformed
+
+    private void btngestionarUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarUsuariosButtonActionPerformed
+        // TODO add your handling code here:
+        
+        jfrmGestionDeUsuarios objGestionUsuarios = new jfrmGestionDeUsuarios();
+        objGestionUsuarios.setVisible(true);
+    }//GEN-LAST:event_btngestionarUsuariosButtonActionPerformed
+
+    private void btngestionarInventarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngestionarInventarioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btngestionarInventarioButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,12 +322,12 @@ public class MainMenu2 extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btngestionarInventarioButton;
+    private javax.swing.JButton btngestionarUsuariosButton;
     private javax.swing.JButton gestionarCategoriasButton;
-    private javax.swing.JButton gestionarInventarioButton;
     private javax.swing.JButton gestionarMesasButton;
     private javax.swing.JButton gestionarPedidosButton;
     private javax.swing.JButton gestionarPlatosButton;
-    private javax.swing.JButton gestionarUsuariosButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salirButton;
     private javax.swing.JLabel welcomeLabel;

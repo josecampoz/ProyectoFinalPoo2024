@@ -14,6 +14,7 @@ com\mycompany\restaurantepp\MainMenu2$1.class
 com\mycompany\restaurantepp\MainMenu2$4.class
 com\mycompany\restaurantepp\FormularioGestionUsuarios$1.class
 com\mycompany\restaurantepp\jfrmGestionDePlatos$2.class
+com\mycompany\restaurantepp\jfrmGestionInventario$2.class
 com\mycompany\restaurantepp\Pedido.class
 com\mycompany\restaurantepp\PedidoForm$5.class
 com\mycompany\restaurantepp\PedidoForm.class
@@ -21,6 +22,7 @@ com\mycompany\restaurantepp\FormularioGestionPlatos$1.class
 com\mycompany\restaurantepp\jfrmGestionDeUsuarios.class
 com\mycompany\restaurantepp\LoginForm2$3.class
 com\mycompany\restaurantepp\FormularioGestionMesas.class
+com\mycompany\restaurantepp\MainMenu2$7.class
 com\mycompany\restaurantepp\LoginForm2$6.class
 com\mycompany\restaurantepp\jfrmGestionDeMesas$1.class
 com\mycompany\restaurantepp\FormularioGestionInventario$2.class
@@ -30,6 +32,7 @@ com\mycompany\restaurantepp\FormularioGestionUsuarios$4.class
 com\mycompany\restaurantepp\PedidoForm$3.class
 com\mycompany\restaurantepp\UsuarioController.class
 com\mycompany\restaurantepp\jfrmGestionDePlatos.class
+com\mycompany\restaurantepp\jfrmGestionInventario$1.class
 com\mycompany\restaurantepp\PedidoForm$6.class
 com\mycompany\restaurantepp\RestaurantePP.class
 com\mycompany\restaurantepp\Rol.class
@@ -76,6 +79,7 @@ com\mycompany\restaurantepp\MainMenu2$5.class
 com\mycompany\restaurantepp\Inventario.class
 com\mycompany\restaurantepp\FormularioGestionPlatos.class
 com\mycompany\restaurantepp\FormularioGestionUsuarios$2.class
+com\mycompany\restaurantepp\jfrmGestionInventario.class
 com\mycompany\restaurantepp\LoginForm2$4.class
 com\mycompany\restaurantepp\FormularioGestionPlatos$3.class
 com\mycompany\restaurantepp\PedidoForm$1.class

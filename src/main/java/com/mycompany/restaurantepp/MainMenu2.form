@@ -51,11 +51,11 @@
                           <EmptySpace min="58" pref="58" max="-2" attributes="0"/>
                           <Component id="gestionarPlatosButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="81" pref="81" max="-2" attributes="0"/>
-                          <Component id="gestionarUsuariosButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="btngestionarUsuariosButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="58" pref="58" max="-2" attributes="0"/>
-                          <Component id="gestionarInventarioButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="btngestionarInventarioButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                           <Component id="salirButton" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -87,11 +87,11 @@
                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="gestionarPlatosButton" min="-2" max="-2" attributes="0"/>
-                      <Component id="gestionarUsuariosButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="btngestionarUsuariosButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="gestionarInventarioButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="btngestionarInventarioButton" min="-2" max="-2" attributes="0"/>
                       <Component id="salirButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="65" max="32767" attributes="0"/>
@@ -138,15 +138,21 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionarPlatosButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="gestionarUsuariosButton">
+        <Component class="javax.swing.JButton" name="btngestionarUsuariosButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gestionar Usuarios"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngestionarUsuariosButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="gestionarInventarioButton">
+        <Component class="javax.swing.JButton" name="btngestionarInventarioButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gestionar Inventario"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngestionarInventarioButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salirButton">
           <Properties>
