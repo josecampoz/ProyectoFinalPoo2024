@@ -80,7 +80,7 @@ public class MainMenu2 extends javax.swing.JFrame {
 
     private void abrirFormularioGestionInventario() {
         // Implementar lógica para abrir el formulario de gestión de inventario
-        JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de inventario");
+        //JOptionPane.showMessageDialog(this, "Abrir formulario de gestión de inventario");
     }
 
     /*// Método principal para ejecutar la aplicación
