@@ -208,4 +208,11 @@ public class jfrmGestionDeUsuarios extends javax.swing.JFrame {
     private javax.swing.JTextField txtContraseña;
     private javax.swing.JTextField txtNameUsuario;
     // End of variables declaration//GEN-END:variables
+    
+    //metodos
+    private void  CrearUsuario(){
+        
+    }
+    
+    
 }
