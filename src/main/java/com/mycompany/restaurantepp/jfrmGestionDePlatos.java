@@ -1,6 +1,9 @@
 //adicion
 package com.mycompany.restaurantepp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author User
@@ -11,6 +14,7 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
      * Creates new form jfrmGestionDePlatos
      */
     public jfrmGestionDePlatos() {
+        listaPlatos = new ArrayList<>(); // Inicialización de la lista de platos
         initComponents();
     }
 
@@ -36,6 +40,7 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
         txtNamePlato = new javax.swing.JTextField();
         txtPrecioPlato = new javax.swing.JTextField();
         btnAtras = new javax.swing.JButton();
+        textInfoPlato = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 255, 255));
@@ -58,6 +63,11 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
 
         btnModificar.setBackground(new java.awt.Color(255, 255, 51));
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnConsultar.setBackground(new java.awt.Color(51, 102, 255));
         btnConsultar.setText("Consultar");
@@ -76,6 +86,11 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
         });
 
         txtIdPlato.setBackground(new java.awt.Color(153, 153, 153));
+        txtIdPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdPlatoActionPerformed(evt);
+            }
+        });
 
         txtNamePlato.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -93,6 +108,9 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
+
+        textInfoPlato.setEditable(false);
+        textInfoPlato.setBackground(new java.awt.Color(255, 255, 153));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -123,6 +141,10 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
                                 .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnConsultar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
                 .addGap(187, 187, 187))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(textInfoPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +173,9 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
                     .addComponent(btnModificar))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(textInfoPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,7 +193,9 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        // TODO add your handling code here:
+        //Método crear plato
+      //  crearPlato();
+         crearPlato();
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void txtPrecioPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioPlatoActionPerformed
@@ -177,11 +203,13 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPrecioPlatoActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
+        // Método Consultar Plato:
+        consultarPlato();
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+        // Método Eliminar Plato:
+        eliminarPlato();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -189,6 +217,15 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
         this.dispose();
         new MainMenu2().setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        //Método Modificar
+        modificarPlato();
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void txtIdPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdPlatoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,8 +273,76 @@ public class jfrmGestionDePlatos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlabel4;
+    private javax.swing.JTextField textInfoPlato;
     private javax.swing.JTextField txtIdPlato;
     private javax.swing.JTextField txtNamePlato;
     private javax.swing.JTextField txtPrecioPlato;
     // End of variables declaration//GEN-END:variables
+    private List<Plato> listaPlatos; // Definición de la lista de platos
+    //Metodos
+    
+    private void crearPlato() {
+        int id = Integer.parseInt(txtIdPlato.getText());
+        String nombre = txtNamePlato.getText();
+        double precio = Double.parseDouble(txtPrecioPlato.getText());
+        Categoria categoria = new Categoria(1, "Categoria Ejemplo"); // Define una nueva categoría
+        Plato plato = new Plato(id, nombre, precio, categoria);
+        listaPlatos.add(plato); // Añadir el plato a la lista
+        textInfoPlato.setText("Plato creado: " + plato.toString());
+    }
+
+    private void modificarPlato() {
+        int id = Integer.parseInt(txtIdPlato.getText());
+        String nombre = txtNamePlato.getText();
+        double precio = Double.parseDouble(txtPrecioPlato.getText());
+        Categoria categoria = new Categoria(1, "Categoria Ejemplo"); // Define una nueva categoría
+        Plato plato = new Plato(id, nombre, precio, categoria);
+        // Lógica para modificar el plato en la lista
+        for (int i = 0; i < listaPlatos.size(); i++) {
+            if (listaPlatos.get(i).getId() == id) {
+                listaPlatos.set(i, plato);
+                textInfoPlato.setText("Plato modificado: " + plato.toString());
+                return;
+            }
+        }
+        textInfoPlato.setText("No se encontró un plato con el ID especificado.");
+    }
+
+    private void consultarPlato() {
+        int id = Integer.parseInt(txtIdPlato.getText());
+        // Lógica para consultar el plato en la lista
+        for (Plato plato : listaPlatos) {
+            if (plato.getId() == id) {
+                textInfoPlato.setText("Consulta de plato: " + plato.toString());
+                return;
+            }
+        }
+        textInfoPlato.setText("No se encontró un plato con el ID especificado.");
+    }
+
+    private void eliminarPlato() {
+        try {
+            int id = Integer.parseInt(txtIdPlato.getText());
+
+            // Buscar y eliminar el plato con el ID especificado
+            Plato platoEliminado = null;
+            for (Plato plato : listaPlatos) {
+                if (plato.getId() == id) {
+                    platoEliminado = plato;
+                    break;
+                }
+            }
+
+            // Si el plato fue encontrado y eliminado
+            if (platoEliminado != null) {
+                listaPlatos.remove(platoEliminado);
+                textInfoPlato.setText("Plato eliminado con ID: " + id);
+            } else {
+                textInfoPlato.setText("No se encontró un plato con el ID especificado.");
+            }
+        } catch (NumberFormatException ex) {
+            textInfoPlato.setText("El ID del plato debe ser un número entero.");
+        }
+    }
+
 }
