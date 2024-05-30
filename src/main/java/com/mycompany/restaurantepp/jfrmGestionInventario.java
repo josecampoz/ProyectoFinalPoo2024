@@ -64,12 +64,32 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
         });
 
         btnCrear.setText("Crear");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnAtras.setBackground(new java.awt.Color(102, 255, 102));
         btnAtras.setText("Atrás");
@@ -174,6 +194,26 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
         new MainMenu2().setVisible(true);
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        // TODO add your handling code here:
+        CrearInventario();
+    }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+        ModificarInventario();
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+        ConsultarInventario();
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        EliminarInventario();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -272,8 +312,8 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
         int id = Integer.parseInt(txtIdInventario.getText());
         Plato platoInvetario = new Plato(id, "", 0, new Categoria(1,"Categoria Ejemplo"));
         
-        textInfoInventario.setText("Inventario consultado: "+ platoInvetario.toString());
-        JOptionPane.showMessageDialog(null, "Inventario consultado: "+platoInvetario.toString(), platoInvetario.toString() , JOptionPane.INFORMATION_MESSAGE);      
+        textInfoInventario.setText("Inventario eliminado: "+ platoInvetario.toString());
+        JOptionPane.showMessageDialog(null, "Inventario eliminado: "+platoInvetario.toString(), platoInvetario.toString() , JOptionPane.INFORMATION_MESSAGE);      
         
     }
 }
