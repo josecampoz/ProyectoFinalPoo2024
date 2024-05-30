@@ -79,13 +79,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
                           <Component id="btngestionarPedidosButton" min="-2" pref="147" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="btnPedidosClase" min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="welcomeLabel" min="-2" pref="203" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="72" max="32767" attributes="0"/>
+                  <EmptySpace pref="55" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -95,7 +97,10 @@
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="welcomeLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btngestionarPedidosButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btngestionarPedidosButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPedidosClase" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btngestionarMesasButton" min="-2" max="-2" attributes="0"/>
@@ -177,6 +182,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnPedidosClase">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ped2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPedidosClaseActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -117,6 +117,7 @@ public class MainMenu2 extends javax.swing.JFrame {
         btngestionarUsuariosButton = new javax.swing.JButton();
         btngestionarInventarioButton = new javax.swing.JButton();
         salirButton = new javax.swing.JButton();
+        btnPedidosClase = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -176,6 +177,13 @@ public class MainMenu2 extends javax.swing.JFrame {
             }
         });
 
+        btnPedidosClase.setText("Ped2");
+        btnPedidosClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPedidosClaseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -199,11 +207,13 @@ public class MainMenu2 extends javax.swing.JFrame {
                         .addComponent(salirButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(172, 172, 172)
-                        .addComponent(btngestionarPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btngestionarPedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnPedidosClase, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(welcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +221,9 @@ public class MainMenu2 extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(welcomeLabel)
                 .addGap(18, 18, 18)
-                .addComponent(btngestionarPedidosButton)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btngestionarPedidosButton)
+                    .addComponent(btnPedidosClase))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btngestionarMesasButton)
@@ -298,6 +310,13 @@ public class MainMenu2 extends javax.swing.JFrame {
         objGestionInventario.setVisible(true);
     }//GEN-LAST:event_btngestionarInventarioButtonActionPerformed
 
+    private void btnPedidosClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidosClaseActionPerformed
+        // TODO add your handling code here:
+        PedidoForm GenerarMetodo = new PedidoForm(this);
+        abrirFormularioGestionPedidos();
+        
+    }//GEN-LAST:event_btnPedidosClaseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,6 +367,7 @@ public class MainMenu2 extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPedidosClase;
     private javax.swing.JButton btngestionarCategoriasButton;
     private javax.swing.JButton btngestionarInventarioButton;
     private javax.swing.JButton btngestionarMesasButton;

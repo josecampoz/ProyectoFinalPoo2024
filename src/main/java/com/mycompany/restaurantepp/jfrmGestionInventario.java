@@ -4,6 +4,8 @@
  */
 package com.mycompany.restaurantepp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -41,6 +43,7 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
         btnConsultar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        textInfoInventario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +79,8 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
             }
         });
 
+        textInfoInventario.setBackground(new java.awt.Color(255, 255, 153));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,22 +93,25 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(txtNameProducto)
-                            .addComponent(txtCantidad)
-                            .addComponent(txtPrecio)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textInfoInventario, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtIdInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(txtNameProducto)
+                                    .addComponent(txtCantidad)
+                                    .addComponent(txtPrecio)
+                                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(18, 18, 18))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -137,7 +145,9 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConsultar)
                     .addComponent(btnEliminar))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(textInfoInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,9 +221,59 @@ public class jfrmGestionInventario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField textInfoInventario;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtIdInventario;
     private javax.swing.JTextField txtNameProducto;
     private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables
+ 
+    //Metodos
+    
+    private void CrearInventario(){
+        
+        int id = Integer.parseInt(txtIdInventario.getText());
+        String name = txtNameProducto.getText();
+        int cantidad = Integer.parseInt(txtCantidad.getText());
+        Double precio = Double.parseDouble(txtPrecio.getText());
+        
+        Plato platoInvetario = new Plato(id, name, 0, new Categoria(1,"Categoria Ejemplo"));
+        textInfoInventario.setText("Inventario creado: "+ platoInvetario.toString());
+        JOptionPane.showMessageDialog(null, "Inventario creado: "+platoInvetario.toString(), platoInvetario.toString() , JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
+    private void ModificarInventario(){
+        
+        int id = Integer.parseInt(txtIdInventario.getText());
+        String name = txtNameProducto.getText();
+        int cantidad = Integer.parseInt(txtCantidad.getText());
+        Double precio = Double.parseDouble(txtPrecio.getText());
+        
+        Plato platoInvetario = new Plato(id, name, 0, new Categoria(1,"Categoria Ejemplo"));
+        textInfoInventario.setText("Inventario modificado: "+ platoInvetario.toString());
+        JOptionPane.showMessageDialog(null, "Inventario Modificado: "+platoInvetario.toString(), platoInvetario.toString() , JOptionPane.INFORMATION_MESSAGE);
+        
+        
+    }
+    
+    private void ConsultarInventario(){
+        
+        int id = Integer.parseInt(txtIdInventario.getText());
+        Plato platoInvetario = new Plato(id, "", 0, new Categoria(1,"Categoria Ejemplo"));
+        
+        textInfoInventario.setText("Inventario consultado: "+ platoInvetario.toString());
+        JOptionPane.showMessageDialog(null, "Inventario consultado: "+platoInvetario.toString(), platoInvetario.toString() , JOptionPane.INFORMATION_MESSAGE);      
+        
+    }
+    
+    private void EliminarInventario(){
+        
+        int id = Integer.parseInt(txtIdInventario.getText());
+        Plato platoInvetario = new Plato(id, "", 0, new Categoria(1,"Categoria Ejemplo"));
+        
+        textInfoInventario.setText("Inventario consultado: "+ platoInvetario.toString());
+        JOptionPane.showMessageDialog(null, "Inventario consultado: "+platoInvetario.toString(), platoInvetario.toString() , JOptionPane.INFORMATION_MESSAGE);      
+        
+    }
 }
